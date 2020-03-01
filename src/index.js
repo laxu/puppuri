@@ -77,6 +77,8 @@ export function renderTemplate(template) {
 }
 
 export function showTemplate() {
+	setRandomBackground();
+
 	const formEl = document.getElementById('job-form');
 	const resultEl = document.getElementById('result-container');
 	toggleElement(formEl, false);
@@ -84,14 +86,29 @@ export function showTemplate() {
 }
 
 export function showForm() {
+	setRandomBackground();
+
 	const formEl = document.getElementById('job-form');
 	const resultEl = document.getElementById('result-container');
+	const infoEl = document.getElementById('info');
 	toggleElement(resultEl, false);
+	toggleElement(infoEl, false);
 	toggleElement(formEl, true);
+}
+
+export function showInfo() {
+	const formEl = document.getElementById('job-form');
+	const resultEl = document.getElementById('result-container');
+	const infoEl = document.getElementById('info');
+	toggleElement(resultEl, false);
+	toggleElement(formEl, false);
+	toggleElement(infoEl, true);
 }
 
 export function init() {
 	setRandomBackground();
+
+
 
 	const formEl = document.getElementById('job-form');
 	formEl.addEventListener('submit', onSubmitForm, false);
@@ -107,11 +124,17 @@ export function init() {
 		setElementDisabled(document.getElementById('job-title'), this.checked);
 	});
 
-	const resetButton = document.getElementById('reset-button');
-	resetButton.addEventListener('click', event => {
+	const showInfoButton = document.getElementById('show-info');
+	showInfoButton.addEventListener('click', event => {
+		event.preventDefault(); 
+		showInfo();
+	});
+
+	const resetButtons = document.querySelectorAll('.reset-button');
+	resetButtons.forEach(el => el.addEventListener('click', event => {
 		event.preventDefault(); 
 		showForm();
-	});
+	}));
 
 	const refreshButton = document.getElementById('refresh-button');
 	refreshButton.addEventListener('click', event => {
