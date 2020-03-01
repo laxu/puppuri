@@ -1,21 +1,15 @@
 import json from '@rollup/plugin-json';
 import {terser} from 'rollup-plugin-terser';
 
+const isProduction = !process.env.ROLLUP_WATCH;
+
 module.exports = {
-	input: 'index.js',
-	plugins: [json()],
-	output: [
-		{
-			name: 'puppuri',
-			file: 'bundle.js',
-			format: 'iife',
-		},
-		{
-			file: 'bundle.min.js',
-			format: 'iife',
-			name: 'version',
-			plugins: [terser()]
-		}
-		
-	]
+	input: 'src/index.js',
+	plugins: [json(), isProduction && terser()],
+	output: {
+		name: 'puppuri',
+		file: 'dist/bundle.min.js',
+		format: 'iife',
+		sourcemap: true,
+	}
 };

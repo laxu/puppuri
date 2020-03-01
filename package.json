@@ -1,14 +1,16 @@
 {
   "name": "puppuri",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The world's best job application generator",
   "main": "index.js",
   "scripts": {
-    "server": "node ./server.js",
+    "server": "node ./src/server.js",
+    "build": "npm run dist && npm run bundle",
     "bundle": "rollup -c",
     "watch": "rollup -c -w",
-    "parse-csv": "node ./parse-csv.js",
-    "parse-templates": "node ./parse-templates.js"
+    "dist": "copyfiles -u 1 src/assets/** src/index.html src/theme.css dist",
+    "parse-csv": "node ./src/parse-csv.js",
+    "parse-templates": "node ./src/parse-templates.js"
   },
   "keywords": [
     "job",
@@ -27,6 +29,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-json": "^4.0.2",
+    "copyfiles": "^2.2.0",
     "papaparse": "^5.1.1",
     "rollup": "^1.31.1",
     "rollup-plugin-terser": "^5.2.0"
