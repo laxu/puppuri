@@ -11,20 +11,20 @@
 		<div class="wrapper">
 			<header id="stock-photo"></header>
 			<div class="container">
-				<h1>Puppuri</h1>
+				<h1>Puppuri - uuden aallon rekrytointiavustaja</h1>
 				<form id="job-form" class="form" method="post" name="job-form">
+					<p><a href="#" id="show-info">Mikä on Puppuri?</a></p>
 					<div class="form-group">
 						<label>Yritys</label>
-						<input type="text" name="company" id="company" placeholder="Yritys Oy Ab">
+						<input type="text" name="company" id="company" placeholder="Kirjoita yrityksesi nimi">
 					</div>
 					<div class="form-group">
 						<label>Työtehtävä</label>
-						<input type="text" name="jobTitle" id="job-title" placeholder="Mahtava työpaikka" disabled>
+						<input type="text" name="jobTitle" id="job-title" placeholder="Kirjoita työtehtävä">
 						<label class="checkbox">
 							<input type="checkbox" 
 								name="randomTitle" 
 								value="1" 
-								checked="checked" 
 								id="random-title"><span>Neuraaliverkko valitsee työtehtävän</span>
 						</label>
 					</div>
@@ -37,10 +37,22 @@
 				</form>
 				<div id="result-container">
 					<div id="result"></div>
-					<div class="actions">
-						<button class="btn" id="reset-button">Aloita alusta</button>
+					<nav class="actions">
+						<button class="btn reset-button">Muuta valintoja</button>
 						<button class="btn" id="refresh-button">Käytä tekoälyä</button>
-					</div>
+					</nav>
+				</div>
+				<div id="info">
+					<h2>Mikä on Puppuri?</h2>
+					<article class="content">
+						<p>Puppuri on yhdistelmä sanoista puppu ja generaattori, se on myös leikkimielinen kannanotto tämän päivän rekrytointikulttuuriin, jossa kilpailu on kovaa ja kieli yhä lennokkaampaa. Puppuri on lisäksi osa osallistumisprojektia, jossa mm. pohditaan kuinka mediassa esiintyvät ilmiöt osallistavat meitä tai estävät meitä osallistumasta.</p>
+						<p>Puppuri koostuu ihmisen käsin kokoamasta tietokannasta ja kahdesta valmiiksi kirjoitetusta pohjasta, joihin generaattori arpoo sanoja. Lähes kaikki käytetyt sanat, muutamia tulipaloja lukuun ottamatta, on kerätty suomalaisista työpaikkailmoituksista, joita julkaistaan eri rekrytointisivustoilla.</p>
+						<p>Kilpailu työntekijöistä on kovaa asiantuntijatehtävissä, jolloin on toki ymmärrettävää, että työpaikan tulee erottua muista kilpailijoista. Kilpailu johtaa viestinnällisiin ratkaisuihin, joissa työnhakijoiden mielenkiintoa pitää herätellä mitä mielikuvituksellisin tavoin. Puppurin tietokantaan on kerätty huvittavimpia ja yleisimpiä termejä.</p>
+						<p>Intohimon kipinän Puppuri-projekti sai Tampereen yliopiston brändäysosaston surkuhupaisasta toteamuksesta sytytellä pieniä tulipaloja tieteen rajapinnoille.</p>
+					</article>
+					<nav class="actions">
+						<button class="btn reset-button">Takaisin</button>
+					</nav>
 				</div>
 			</div>
 		</div>
