@@ -11,7 +11,7 @@ const papaConfig = {
 
 function readCSV() {
 	const fileName = process.argv[2];
-	const fileContent = fs.readFileSync(path.join(__dirname, fileName), 'utf8');
+	const fileContent = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
 	Papa.parse(fileContent, papaConfig);
 }
 
