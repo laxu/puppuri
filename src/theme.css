@@ -36,7 +36,7 @@ header {
 
 .form-group {
 	width: 100%;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 }
 
 .form-group label {
@@ -44,9 +44,16 @@ header {
 	margin-bottom: .5rem;
 }
 
-.form-group input {
+.form-group input[type=text] {
 	display: block;
+	min-width: 250px;
 	padding: .5rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.form-group input.invalid {
+	border-color: red;
 }
 
 #job-title {
@@ -62,7 +69,7 @@ header {
 .form-group .checkbox input {
 	display: inline-block;
 	margin-right: .5rem;
-	vertical-align: top;
+	vertical-align: middle;
 }
 
 .btn {
@@ -94,6 +101,10 @@ header {
 
 #result {
 	margin-bottom: 2rem;
+}
+
+#info {
+	display: none;
 }
 
 @media screen and (min-width: 768px) {
