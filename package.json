@@ -1,0 +1,27 @@
+{
+  "name": "puppuri",
+  "version": "1.0.0",
+  "description": "The world's best job application generator",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./server.js",
+    "bundle": "rollup -c",
+    "watch": "rollup -c -w",
+    "parse-csv": "node ./parse-csv.js",
+    "parse-templates": "node ./parse-templates.js"
+  },
+  "keywords": [
+    "job",
+    "work",
+    "application"
+  ],
+  "author": "Mikko Lakomaa & Sanna-Mari Mustonen",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.0.2",
+    "connect": "^3.7.0",
+    "papaparse": "^5.1.1",
+    "rollup": "^1.31.1",
+    "serve-static": "^1.14.1"
+  }
+}
