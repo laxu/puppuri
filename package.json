@@ -17,6 +17,10 @@
   ],
   "author": "Mikko Lakomaa & Sanna-Mari Mustonen",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/laxu/puppuri.git"
+  },
   "dependencies": {
     "connect": "^3.7.0",
     "serve-static": "^1.14.1"
