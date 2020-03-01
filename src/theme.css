@@ -1,6 +1,13 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+html {
 	font-family: Helvetica, Arial;
-	font-size: 16px;
+	font-size: 12px;
+}
+
+body {
 	text-align: center;
 	background-color: #e0eac4;
 }
@@ -10,9 +17,7 @@ h1, h3 {
 }
 
 .wrapper {
-	margin: 5% auto;
-	width: 80%;
-	max-width: 800px;
+	margin: 0 auto;
 	text-align: left;
 	
 	background-color: white;
@@ -20,13 +25,13 @@ h1, h3 {
 }
 
 .container {
-	padding: 2rem;
+	padding: 1.6rem;
 }
 
 header {
 	width: 100%;
 	background-size: cover;
-	min-height: 400px;
+	min-height: 200px;
 }
 
 .form-group {
@@ -82,11 +87,32 @@ header {
 #result-container {
 	display: none;
 	border: 1px solid #ccc;
-	padding: 2rem;
+	padding: 1rem;
 	border-radius: 5px;
 	font-family: monospace;
 }
 
 #result {
 	margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+
+	.wrapper {
+		margin-top: 20px;
+		max-width: 720px;
+	}
+
+	header {
+		min-height: 300px;
+	}
+
+	.container {
+		padding: 2rem;
+	}
+
+	#result-container {
+		padding: 2rem;
+	}
+	
 }
