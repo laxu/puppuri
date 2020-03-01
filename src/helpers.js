@@ -18,12 +18,21 @@ export function getRandomWord(key) {
 	return group[getRandomInt(0, group.length)];
 }
 
-export function toggleElement(el, state) {
-	el.style.display = state ? 'block' : 'none';
+export function toggleElement(el, isVisible) {
+	el.style.display = isVisible ? 'block' : 'none';
 }
 
-export function setElementDisabled(el, state) {
-	if (state) {
+export function setElementValidity(el, isValid) {
+	if (isValid) {
+		el.className = el.className.replace('invalid', '')
+	} else {
+		el.className = el.className + ' invalid';
+	}
+	
+}
+
+export function setElementDisabled(el, isDisabled) {
+	if (isDisabled) {
 		el.setAttribute('disabled', true);
 	} else {
 		el.removeAttribute('disabled');
@@ -31,10 +40,18 @@ export function setElementDisabled(el, state) {
 }
 
 export function isValidForm(formData) {
+	const formFieldElements = Array.from(document.forms[0].elements).filter(el => el.tagName === 'INPUT');
 	return requiredFormFields.every(field => {
 		const value = formData.get(field);
-		if (field === 'jobTitle' && formData.get('randomTitle')) return true;
-		return value && value.length > 0;
+		const el = formFieldElements.find(el => el.name === field);
+		if (field === 'jobTitle' && formData.get('randomTitle')) {
+			setElementValidity(el, true);
+			return true;
+		}
+		
+		const isValid = value && value.length > 0;
+		setElementValidity(el, isValid);
+		return isValid;
 	});
 }
 
