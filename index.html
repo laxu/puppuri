@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Puppuri</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="theme.css">
+		<script type="module" src="bundle.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header id="stock-photo"></header>
+			<div class="container">
+				<h1>Puppuri</h1>
+				<form id="job-form" class="form" method="post" name="job-form">
+					<div class="form-group">
+						<label>Yritys</label>
+						<input type="text" name="company" id="company" placeholder="Yritys Oy Ab">
+					</div>
+					<div class="form-group">
+						<label>Työtehtävä</label>
+						<input type="text" name="jobTitle" id="job-title" placeholder="Mahtava työpaikka" disabled>
+						<label class="checkbox">
+							<input type="checkbox" 
+								name="randomTitle" 
+								value="1" 
+								checked="checked" 
+								id="random-title"><span>Neuraaliverkko valitsee työtehtävän</span>
+						</label>
+					</div>
+					<div class="form-group">
+						
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="btn" id="submit-button">Luo ilmoitus</button>
+					</div>
+				</form>
+				<div id="result-container">
+					<div id="result"></div>
+					<div class="actions">
+						<button class="btn" id="reset-button">Aloita alusta</button>
+						<button class="btn" id="refresh-button">Käytä tekoälyä</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
